@@ -1,0 +1,39 @@
+.message_sent {
+  max-width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0px 10px 10px 10px;
+  float: right;
+  clear: both;
+  &_msg {
+    width: Hug (287px);
+    height: Hug (70px);
+    padding: 8px;
+    border-radius: 20px 12px 0px 12px;
+    box-shadow: 0px 4px 8px 0px #00000014;
+    background: #1c63d5;
+  }
+}
+
+.message_received {
+  max-width: 80%;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  margin: 0px 10px 10px 10px;
+  float: left;
+  clear: both;
+  &_msg {
+    width: Hug (287px);
+    height: Hug (70px);
+    padding: 8px;
+    border-radius: 0px 12px 12px 12px;
+    box-shadow: 0px 4px 8px 0px #00000014;
+  }
+}
+
+#profile {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}

@@ -1,0 +1,22 @@
+.type {
+  height: 30%;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px 10px 10px 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &_icons {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+#input_tag {
+  width: 70vw;
+  line-height: 36px;
+  font-size: 20px;
+}
