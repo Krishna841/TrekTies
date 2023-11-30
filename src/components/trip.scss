@@ -10,6 +10,12 @@
     height: 15%;
     width: 100%;
   }
+  &_reload {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    margin-top: 2em;
+  }
   &_messages {
     height: 70%;
     width: 100%;

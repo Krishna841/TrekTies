@@ -5,14 +5,12 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import back from "./back.svg";
 
 import "./header.scss";
+import SignOut from "./signout";
 
-const Header = ({ data, page, setPage }) => {
+const Header = ({ data }) => {
   const formatTitle = (name) => {
     const x = name.split(" ");
     return x[0] + " " + x[2];
-  };
-  const changePage = () => {
-    setPage(page + 1);
   };
 
   return (
@@ -21,10 +19,9 @@ const Header = ({ data, page, setPage }) => {
         <div className="header_title_left">
           <img
             src={back}
-            alt="change page"
+            alt="logout"
             onClick={() => {
-              changePage();
-              console.log(page);
+              SignOut();
             }}
           />
           {formatTitle(data.name)}

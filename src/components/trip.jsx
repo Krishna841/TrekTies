@@ -1,12 +1,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Icon } from "@chakra-ui/react";
+import { RepeatClockIcon } from "@chakra-ui/icons";
 
 import Header from "./header";
 import Messages from "./messages";
 import Type from "./type";
 import "./trip.scss";
 
-const Trip = () => {
+const Trip = ({ auth }) => {
   const [msg, setMsg] = useState([]);
   const [page, setPage] = useState(0);
   const [headers, setHeaders] = useState({
@@ -43,8 +45,17 @@ const Trip = () => {
   return (
     <div className="trip">
       <div className="trip_headers">
-        <Header data={headers} page={page} setPage={setPage} />
+        <Header data={headers} page={page} setPage={setPage} auth={auth} />
       </div>
+      <Icon
+        as={RepeatClockIcon}
+        h={20}
+        w={20}
+        className="trip_reload"
+        onClick={() => {
+          setPage(page + 1);
+        }}
+      />
       <div className="trip_messages">
         <Messages data={msg} />
       </div>
