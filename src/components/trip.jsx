@@ -57,7 +57,7 @@ const Trip = ({ auth, firestore }) => {
         }}
       />
       <div className="trip_messages">
-        <Messages auth={auth} firestore={firestore} />
+        {/* <Messages auth={auth} firestore={firestore} /> */}
       </div>
       <div className="trip_type">
         <Type firestore={firestore} auth={auth} />

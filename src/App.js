@@ -5,11 +5,13 @@ import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import "firebase/compat/analytics";
 
+import { useContext } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 import Trip from "./components/trip";
 import SignIn from "./components/signin";
 import Dashboard from "./components/dashboard";
+import { UserContext, UserProvider } from "./components/context";
 
 firebase.initializeApp({
   apiKey: "AIzaSyDaef2nNUCZCXHCsAHdhYYDXRc9DYoMZ_M",
@@ -26,18 +28,18 @@ const auth = firebase.auth();
 const firestore = firebase.firestore();
 
 function App() {
-  const [user] = useAuthState(auth);
+  const { currentUser } = useContext(UserContext);
 
   return (
     <div className="App">
-      {/* <section>
-        {user ? (
+      <section>
+        {currentUser ? (
           <Trip auth={auth} firestore={firestore} />
         ) : (
           <SignIn auth={auth} />
         )}
-      </section> */}
-      <Dashboard />
+      </section>
+      {/* <Dashboard /> */}
     </div>
   );
 }
