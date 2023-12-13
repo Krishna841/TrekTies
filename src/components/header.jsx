@@ -1,13 +1,11 @@
-import React from "react";
 import { EditIcon } from "@chakra-ui/icons";
 import { Icon } from "@chakra-ui/react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import back from "./back.svg";
 
 import "./header.scss";
-import SignOut from "./signout";
 
-const Header = ({ data }) => {
+const Header = ({ data, auth }) => {
   const formatTitle = (name) => {
     const x = name.split(" ");
     return x[0] + " " + x[2];
@@ -17,13 +15,7 @@ const Header = ({ data }) => {
     <div className="header">
       <div className="header_title">
         <div className="header_title_left">
-          <img
-            src={back}
-            alt="logout"
-            onClick={() => {
-              SignOut();
-            }}
-          />
+          <img src={back} alt="logout" />
           {formatTitle(data.name)}
         </div>
         <EditIcon h={24} w={24} />
