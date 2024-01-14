@@ -1,6 +1,6 @@
 import "./App.css";
 import firebase from "firebase/compat/app";
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import "firebase/compat/analytics";
@@ -32,13 +32,16 @@ function App() {
 
   return (
     <div className="App">
-      <section>
-        {currentUser ? (
-          <Trip auth={auth} firestore={firestore} />
-        ) : (
-          <SignIn auth={auth} />
-        )}
-      </section>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/trip"
+            element={<Trip auth={auth} firestore={firestore} />}
+          />
+          <Route path="/" element={<SignIn auth={auth} />} />
+        </Routes>
+      </BrowserRouter>
+
       {/* <Dashboard /> */}
     </div>
   );

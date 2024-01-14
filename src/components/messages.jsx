@@ -1,7 +1,7 @@
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import "firebase/compat/analytics";
-
+import { useEffect, useState } from "react";
 // import { useRef, useState } from "react";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
@@ -13,7 +13,6 @@ const Messages = ({ auth, firestore }) => {
   // const dummy = useRef();
   const messageRef = firestore.collection("messages");
   const query = messageRef.orderBy("createdAt").limit(100);
-
   const [messages] = useCollectionData(query, { idField: "id" });
 
   // const formatDate = (var_date) => {

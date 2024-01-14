@@ -45,7 +45,7 @@ const Trip = ({ auth, firestore }) => {
   return (
     <div className="trip">
       <div className="trip_headers">
-        {/* <Header data={headers} page={page} setPage={setPage} auth={auth} /> */}
+        <Header auth={auth} />
       </div>
       <Icon
         as={RepeatClockIcon}
@@ -57,7 +57,7 @@ const Trip = ({ auth, firestore }) => {
         }}
       />
       <div className="trip_messages">
-        {/* <Messages auth={auth} firestore={firestore} /> */}
+        <Messages auth={auth} firestore={firestore} />
       </div>
       <div className="trip_type">
         <Type firestore={firestore} auth={auth} />

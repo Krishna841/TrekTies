@@ -1,26 +1,33 @@
 import { EditIcon } from "@chakra-ui/icons";
 import { Icon } from "@chakra-ui/react";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import back from "./back.svg";
-
+import { useNavigate } from "react-router-dom";
 import "./header.scss";
 
-const Header = ({ data, auth }) => {
-  const formatTitle = (name) => {
-    const x = name.split(" ");
-    return x[0] + " " + x[2];
-  };
-
+const Header = ({ auth }) => {
+  // const formatTitle = (name) => {
+  //   const x = name.split(" ");
+  //   return x[0] + " " + x[2];
+  // };
+  const navigate = useNavigate();
   return (
     <div className="header">
       <div className="header_title">
-        <div className="header_title_left">
+        <button
+          onClick={() => {
+            auth.signOut();
+            navigate("/");
+          }}
+        >
+          Logout
+        </button>
+        {/* <div className="header_title_left">
           <img src={back} alt="logout" />
           {formatTitle(data.name)}
-        </div>
+        </div> */}
         <EditIcon h={24} w={24} />
       </div>
-      <div className="header_from">
+      {/* <div className="header_from">
         From
         <div className="header_from_start">{data.from}</div>
       </div>
@@ -29,11 +36,11 @@ const Header = ({ data, auth }) => {
           To
           <div className="header_to_text_end">{data.to}</div>
         </div>
-        <div>
-          <Icon as={BsThreeDotsVertical} h={24} w={24} />
-        </div>
-      </div>
+        <div> */}
+      <Icon as={BsThreeDotsVertical} h={24} w={24} />
     </div>
+    // </div>
+    // </div>
   );
 };
 
